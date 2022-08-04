@@ -45,17 +45,17 @@ public class UsuarioController implements UsuarioDocumentation {
 
     @PostMapping("/cadastro-admin")
     public ResponseEntity<UsuarioDTO> createUserAdmin(@RequestBody @Valid UsuarioCreateDTO usuarioCreateDTO) throws RegraDeNegocioException {
-        return new ResponseEntity<>(usuarioService.saveUsuario(usuarioCreateDTO, TipoPessoa.ADMIN), HttpStatus.OK);
+        return new ResponseEntity<>(usuarioService.saveUsuario(usuarioCreateDTO, TipoPessoa.ROLE_ADMIN), HttpStatus.OK);
     }
 
     @PostMapping("/cadastro-aluno")
     public ResponseEntity<UsuarioDTO> createUserAluno(@RequestBody @Valid UsuarioCreateDTO usuarioCreateDTO) throws RegraDeNegocioException {
-        return new ResponseEntity<>(usuarioService.saveUsuario(usuarioCreateDTO, TipoPessoa.ALUNO), HttpStatus.OK);
+        return new ResponseEntity<>(usuarioService.saveUsuario(usuarioCreateDTO, TipoPessoa.ROLE_ALUNO), HttpStatus.OK);
     }
 
     @PostMapping("/cadastro-professor")
     public ResponseEntity<UsuarioDTO> createUserProfessor(@RequestBody @Valid UsuarioCreateDTO usuarioCreateDTO) throws RegraDeNegocioException {
-        return new ResponseEntity<>(usuarioService.saveUsuario(usuarioCreateDTO, TipoPessoa.PROFESSOR), HttpStatus.OK);
+        return new ResponseEntity<>(usuarioService.saveUsuario(usuarioCreateDTO, TipoPessoa.ROLE_PROFESSOR), HttpStatus.OK);
     }
 
     @GetMapping("/logged")

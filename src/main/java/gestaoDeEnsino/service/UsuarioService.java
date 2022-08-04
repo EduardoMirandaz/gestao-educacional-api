@@ -106,9 +106,9 @@ public class UsuarioService {
     }
 
     public List<RelatorioUsuariosDoSistemaDTO> listarUsuariosDoSistema(TipoPessoa tipoPessoa) {
-        if (tipoPessoa.equals(TipoPessoa.ALUNO)) {
+        if (tipoPessoa.equals(TipoPessoa.ROLE_ALUNO)) {
             return alunoRepository.relatorioAlunosDoSistema();
-        } else if (tipoPessoa.equals(TipoPessoa.PROFESSOR)){
+        } else if (tipoPessoa.equals(TipoPessoa.ROLE_PROFESSOR)){
             return professorRepository.relatorioProfessoresDoSistema();
         } else {
             return usuarioRepository.findAllByAlunoEntityIsNullAndProfessorEntityIsNull().stream()

@@ -2,5 +2,5 @@ package gestaoDeEnsino.enums;
 
 public enum TipoPessoa {
 
-    ALUNO, PROFESSOR, ADMIN;
+    ROLE_ALUNO, ROLE_PROFESSOR, ROLE_ADMIN;
 }
